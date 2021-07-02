@@ -13,4 +13,4 @@ home = Blueprint(
 
 @home.route('/')
 def homes():
-    return 'Hello World'
+    return home.send_static_file('index.html')
