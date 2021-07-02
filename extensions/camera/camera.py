@@ -12,7 +12,7 @@ class Camera:
 
     #读取图片
     def read(self):
-        ret, frame = self.__cap.read()
+        ret, frame = self.__cap.read() #ret表示是否读取成功，frame是视频帧的原始np数组
         #先将数组类型编码成 jepg 类型的数据,然后转字节数组,最后将其用base64编码
         r, buf = cv.imencode(".jpeg", frame)
         dat = Image.fromarray(np.uint8(buf)).tobytes()
