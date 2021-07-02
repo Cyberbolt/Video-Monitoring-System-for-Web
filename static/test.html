@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>hangge.com</title>
+ </head>
+ <style>
+    canvas {
+        border: 1px dashed black;
+    }
+ </style>
+ 
+ <script>
+    function draw() {
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+ 
+        var video = document.getElementById("videoPlayer");
+        context.drawImage(video, 0, 0, video.clientWidth, video.clientHeight);
+    }
+</script>
+ <body>
+     <video id="videoPlayer" src="hangge.mp4" controls width="200" height="150"></video>
+     <button onclick="draw()">截图</button>
+     <canvas id="myCanvas" width="300" height="180">
+ </body>
+</html>

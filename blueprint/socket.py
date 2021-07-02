@@ -1,7 +1,10 @@
 import time
+import json
 
 from flask import Flask, Blueprint, request, jsonify
 from flask_socketio import SocketIO, emit
+
+from extensions import Camera
 
 
 app = Flask(__name__)
@@ -13,10 +16,14 @@ socket = Blueprint(
     static_url_path='',  # 静态文件目录在链接的起始位置    
 )
 socketio = SocketIO(async_mode='eventlet') #使用eventlet运行Websocket
+camera = Camera() #实例化相机类
 
 
-@socketio.on('background')
+@socketio.on('video')
 def vedio(data):
-    print(data)
-    time.sleep(1)
-    emit('front', '2')
+    time.sleep(0.001)
+    img_date_url = camera.read() #获取视频帧
+    data = json.dumps({
+        'img_date_url': img_date_url
+    })
+    emit('video', data, json=True)
