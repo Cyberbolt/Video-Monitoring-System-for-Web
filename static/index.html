@@ -19,15 +19,24 @@
 				border-radius: 25px;
 				margin: auto;
 				margin-top: 100px;
-			}
+				}
+			.bg {
+				height: 100%;
+				width: 100%;
+				background: url(show.jpg) no-repeat;
+				background-size: cover;
+				position: absolute;
+				overflow: hidden;
+				}
 		</style>
 		<title>实时视频监控</title>
 	</head>
-	<body>
+	<body class="bg">
+		
+		<h3  align="center">基于web的视频监控系统</h3>
+		
 		<div id="display">
 			<canvas id="canvas"></canvas>
-
-
 		</div>
         
 
