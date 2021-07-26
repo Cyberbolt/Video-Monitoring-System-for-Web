@@ -23,7 +23,7 @@ camera = Camera() #实例化相机类
 
 @socketio.on('video')
 def vedio(data):
-    time.sleep(0.001)
+    time.sleep(0.01)
     data = json.dumps({
         'img_date_url': camera.read() #获取视频帧(base64格式)
     })

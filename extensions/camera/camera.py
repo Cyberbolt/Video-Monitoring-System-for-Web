@@ -4,10 +4,12 @@ from PIL import Image
 import numpy as np
 import cv2 as cv
 
+from config import config
+
 
 class Camera:
     def __init__(self):
-        self.__cap = cv.VideoCapture(1) #连接摄像头
+        self.__cap = cv.VideoCapture(config.camera) #连接摄像头
         self.__JPEG_HEADER = "data:image/jpeg;base64,"  # 这个是对图片转码用的
 
     #读取图片
