@@ -19,6 +19,6 @@ pip install -r requirements.txt
 
 python app.py
 
-运行此程序，访问 127.0.0.1 即可
+运行此程序，浏览器访问 127.0.0.1:5000 即可
 
 如果您连接的外置摄像头，请在 config/config.py 中修改摄像头的序号
